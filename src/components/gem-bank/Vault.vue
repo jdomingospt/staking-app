@@ -18,7 +18,7 @@
   <div class="flex items-stretch">
     <!--left-->
     <NFTGrid
-      title="Wallet"
+      title="Zillas"
       class="flex-1"
       :nfts="desiredWalletNFTs"
       @selected="handleWalletSelected"
