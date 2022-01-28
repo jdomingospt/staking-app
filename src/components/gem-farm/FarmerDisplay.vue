@@ -4,8 +4,8 @@
     <div class="nes-container with-title flex-1 mr-5">
       <p class="title">Your Zillas Farm</p>
       <div class="mb-2">
-        state:
-        <p class="inline-block bg-yellow-200">
+        State:
+        <p class="inline-block bg-yellow-200 custom-capital">
           {{ parseFarmerState(farmerAcc) }}
         </p>
       </div>
@@ -103,4 +103,8 @@ export default defineComponent({
 });
 </script>
 
-<style scoped></style>
+<style scoped>
+  .custom-capital{
+      text-transform: capitalize;
+  }
+</style>
