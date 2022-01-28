@@ -7,7 +7,7 @@ import {
   TOKEN_PROGRAM_ID,
 } from '@solana/spl-token';
 import { AccountUtils } from '../gem-common/account-utils';
-import { GemBank } from '../../src/target/types/gem_bank';
+import { GemBank } from './gem_bank';
 import { isKp } from '../gem-common/types';
 
 export enum BankFlags {

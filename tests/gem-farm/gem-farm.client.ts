@@ -1,7 +1,7 @@
 import * as anchor from '@project-serum/anchor';
 import { BN, Idl, Program, Wallet } from '@project-serum/anchor';
 import { Keypair, PublicKey, SystemProgram } from '@solana/web3.js';
-import { GemFarm } from '../../src/target/types/gem_farm';
+import { GemFarm } from './gem_farm';
 import { Connection } from '@metaplex/js';
 import { isKp, stringifyPKsAndBNs } from '../gem-common/types';
 import { GemBankClient, WhitelistType } from '../gem-bank/gem-bank.client';
