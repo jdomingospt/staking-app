@@ -2,6 +2,7 @@ import { Connection, PublicKey } from '@solana/web3.js';
 import { TOKEN_PROGRAM_ID } from '@solana/spl-token';
 import axios from 'axios';
 import { programs } from '@metaplex/js';
+import { mintList } from './NFTList';
 
 const {
   metadata: { Metadata },
@@ -16,17 +17,15 @@ export interface INFT {
 
 async function getTokensByOwner(owner: PublicKey, conn: Connection) {
   const tokens = await conn.getParsedTokenAccountsByOwner(owner, {
-    programId: new PublicKey("TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"),
-    //programId: TOKEN_PROGRAM_ID,
+    programId: TOKEN_PROGRAM_ID,
   });
-
-  
 
   // initial filter - only tokens with 0 decimals & of which 1 is present in the wallet
   return tokens.value
     .filter((t) => {
       const amount = t.account.data.parsed.info.tokenAmount;
-      return amount.decimals === 0 && amount.uiAmount === 1;
+      const exists = mintList.indexOf(t.account.data.parsed.info.mint) !== -1;
+      return amount.decimals === 0 && amount.uiAmount === 1 && exists;
     })
     .map((t) => {
       return { pubkey: t.pubkey, mint: t.account.data.parsed.info.mint };
