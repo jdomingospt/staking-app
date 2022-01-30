@@ -16,9 +16,9 @@ export interface INFT {
 
 async function getTokensByOwner(owner: PublicKey, conn: Connection) {
   const tokens = await conn.getParsedTokenAccountsByOwner(owner, {
-    //programId: TOKEN_PROGRAM_ID,
-    programId: "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+    programId: "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
   });
+  //programId: TOKEN_PROGRAM_ID,
 
   // initial filter - only tokens with 0 decimals & of which 1 is present in the wallet
   return tokens.value
