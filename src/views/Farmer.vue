@@ -7,7 +7,7 @@
     <div v-if="farmerAcc">
       <FarmerDisplay
         :key="farmerAcc"
-        :farm="'E8goKka67XmDQa3RUT2aTpj1GGrqdcSaBbMrfwrSQ5e7'"
+        :farm="'CtWTXdRsy3pQjNB4MksEt5G88FBBW8whZY6MhS58Wb8Z'"
         :farmAcc="farmAcc"
         :farmer="farmer"
         :farmerAcc="farmerAcc"
@@ -49,7 +49,7 @@
           End cooldown
         </button>
         <button class="nes-btn is-warning" @click="claim">
-          Claim {{ availableA }} NCLR
+          Claim {{ (availableA / 1000000000).toFixed(3) }} NCLR
         </button>
       </Vault>
     </div>
@@ -122,9 +122,9 @@ export default defineComponent({
     const fetchFarn = async () => {
       // 1.
       //farmAcc.value = await gf.fetchFarmAcc(new PublicKey(farm.value!));
-      farmAcc.value = await gf.fetchFarmAcc(new PublicKey("E8goKka67XmDQa3RUT2aTpj1GGrqdcSaBbMrfwrSQ5e7"));
+      farmAcc.value = await gf.fetchFarmAcc(new PublicKey("CtWTXdRsy3pQjNB4MksEt5G88FBBW8whZY6MhS58Wb8Z"));
       console.log(
-        `farm found at E8goKka67XmDQa3RUT2aTpj1GGrqdcSaBbMrfwrSQ5e7:`,
+        `farm found at CtWTXdRsy3pQjNB4MksEt5G88FBBW8whZY6MhS58Wb8Z:`,
         stringifyPKsAndBNs(farmAcc.value)
       );
     };
@@ -135,7 +135,7 @@ export default defineComponent({
         getWallet()!.publicKey
       );*/
       const [farmerPDA] = await gf.findFarmerPDA(
-        new PublicKey("E8goKka67XmDQa3RUT2aTpj1GGrqdcSaBbMrfwrSQ5e7"),
+        new PublicKey("CtWTXdRsy3pQjNB4MksEt5G88FBBW8whZY6MhS58Wb8Z"),
         getWallet()!.publicKey
       );
       farmerIdentity.value = getWallet()!.publicKey?.toBase58();
@@ -165,28 +165,28 @@ export default defineComponent({
           await fetchFarmer();
         } catch (e) {
           //console.log(`farm with PK ${farm.value} not found :(`);
-          console.log(`farm with PK E8goKka67XmDQa3RUT2aTpj1GGrqdcSaBbMrfwrSQ5e7 not found :(`);
+          console.log(`farm with PK CtWTXdRsy3pQjNB4MksEt5G88FBBW8whZY6MhS58Wb8Z not found :(`);
         }
       }
     };
 
     const initFarmer = async () => {
       //await gf.initFarmerWallet(new PublicKey(farm.value!));
-      await gf.initFarmerWallet(new PublicKey("E8goKka67XmDQa3RUT2aTpj1GGrqdcSaBbMrfwrSQ5e7"));
+      await gf.initFarmerWallet(new PublicKey("CtWTXdRsy3pQjNB4MksEt5G88FBBW8whZY6MhS58Wb8Z"));
       await fetchFarmer();
     };
 
     // --------------------------------------- staking
     const beginStaking = async () => {
       //await gf.stakeWallet(new PublicKey(farm.value!));
-      await gf.stakeWallet(new PublicKey("E8goKka67XmDQa3RUT2aTpj1GGrqdcSaBbMrfwrSQ5e7"));
+      await gf.stakeWallet(new PublicKey("CtWTXdRsy3pQjNB4MksEt5G88FBBW8whZY6MhS58Wb8Z"));
       await fetchFarmer();
       selectedNFTs.value = [];
     };
 
     const endStaking = async () => {
       //await gf.unstakeWallet(new PublicKey(farm.value!));
-      await gf.unstakeWallet(new PublicKey("E8goKka67XmDQa3RUT2aTpj1GGrqdcSaBbMrfwrSQ5e7"));
+      await gf.unstakeWallet(new PublicKey("CtWTXdRsy3pQjNB4MksEt5G88FBBW8whZY6MhS58Wb8Z"));
       await fetchFarmer();
       selectedNFTs.value = [];
     };
@@ -198,7 +198,7 @@ export default defineComponent({
         new PublicKey(farmAcc.value.rewardB.rewardMint!)
       );*/
       await gf.claimWallet(
-        new PublicKey("E8goKka67XmDQa3RUT2aTpj1GGrqdcSaBbMrfwrSQ5e7"),
+        new PublicKey("CtWTXdRsy3pQjNB4MksEt5G88FBBW8whZY6MhS58Wb8Z"),
         new PublicKey(farmAcc.value.rewardA.rewardMint!),
         new PublicKey(farmAcc.value.rewardB.rewardMint!)
       );
@@ -230,7 +230,7 @@ export default defineComponent({
         creator
       );*/
       await gf.flashDepositWallet(
-        new PublicKey("E8goKka67XmDQa3RUT2aTpj1GGrqdcSaBbMrfwrSQ5e7"),
+        new PublicKey("CtWTXdRsy3pQjNB4MksEt5G88FBBW8whZY6MhS58Wb8Z"),
         '1',
         gemMint,
         gemSource,

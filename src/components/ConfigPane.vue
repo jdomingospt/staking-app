@@ -2,10 +2,7 @@
   <div class="flex justify-center mb-10 mt-20">
     <div class="nes-select is-dark flex-1 mr-5">
       <select required id="cluster" v-model="chosenCluster">
-        <option :value="Cluster.Mainnet">Mainnet</option>
-        <option :value="Cluster.Devnet">Devnet</option>
-        <option :value="Cluster.Testnet">Testnet</option>
-        <option :value="Cluster.Localnet">Localnet</option>
+        <option selected :value="Cluster.Mainnet">Mainnet</option>
       </select>
     </div>
     <div class="nes-select is-dark flex-1">

@@ -1,7 +1,7 @@
 import { PublicKey } from '@solana/web3.js';
 
 export const DEFAULTS = {
-  CLUSTER: 'devnet',
+  CLUSTER: 'mainnet',
   //todo these need to be PER cluster
   GEM_BANK_PROG_ID: new PublicKey(
     '4bnFSnkQCBgFjDd5ThEMKfB8yjRLDngHwAPimpPPWCf3'

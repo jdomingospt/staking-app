@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="mb-2">Base rate: {{ schedule.baseRate }} tokens/gem/s</div>
+    <div class="mb-2">Base rate: {{ (schedule.baseRate / 1000000000).toFixed(3) }} tokens/gem/s</div>
     <div class="mb-2" v-if="schedule.tier1">
       T1 reward rate:
       {{ schedule.tier1.rewardRate }} tokens/gem/s
