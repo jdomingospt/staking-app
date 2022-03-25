@@ -23,7 +23,7 @@
         Last updated: {{ parseDate(reward.fixedRate.lastUpdatedTs) }}
       </div>
      
-      <div class="mb-2 bg-black text-white">Rewards: 20 NCLR / Zilla / day</div>
+      <div class="mb-2 bg-black text-white">Rewards: 20 MOSC / Zilla / day</div>
       <div class="mb-2 bg-black text-white"></div>
     </div>
   </div>

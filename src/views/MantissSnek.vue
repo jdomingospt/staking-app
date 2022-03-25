@@ -5,13 +5,18 @@
     <!--farm address-->
     
     <div v-if="farmerAcc">
+    <h2 class="mt-10 text-center">Mantiss Snek Special Farm</h2>
+      <div style="width: 100%" class="mt-10">
+        <img src="https://pbs.twimg.com/profile_banners/1483144490730733580/1643358447/1500x500" style="margin: auto;">
+      </div>
+      
       <FarmerDisplay
         :key="farmerAcc"
-        :farm="'EStSdFzgwkQxpynVKfntgTZpRERCieHn2MjRw6gwz7EN'"
+        :farm="'CSopnTK6AV3m7nMweHVkYi2vLQMtwC2kyNoKMU5ASJYa'"
         :farmAcc="farmAcc"
         :farmer="farmer"
         :farmerAcc="farmerAcc"
-        class="mb-10"
+        class="mb-10 mt-10"
         @refresh-farmer="handleRefreshFarmer"
       />
       <Vault
@@ -125,7 +130,7 @@ export default defineComponent({
     const fetchFarn = async () => {
       // 1.
       //farmAcc.value = await gf.fetchFarmAcc(new PublicKey(farm.value!));
-        farm1 = "EStSdFzgwkQxpynVKfntgTZpRERCieHn2MjRw6gwz7EN";
+        farm1 = "CSopnTK6AV3m7nMweHVkYi2vLQMtwC2kyNoKMU5ASJYa";
   
       farmAcc.value = await gf.fetchFarmAcc(new PublicKey(farm1));
       console.log(

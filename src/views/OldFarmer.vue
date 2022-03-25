@@ -1,5 +1,10 @@
 <template>
   <ConfigPane />
+  <div class="flex flex-row mb-10 mt-10">
+       <router-link to="farmer">
+        <button class="nes-btn is-primary">Go to new $MOSC Farm</button>
+      </router-link>
+      </div>
   <div v-if="!wallet" class="text-center mt-40">Wallet disconnected ...</div>
   <div v-else>
     <!--farm address-->
@@ -7,7 +12,7 @@
     <div v-if="farmerAcc">
       <FarmerDisplay
         :key="farmerAcc"
-        :farm="'EStSdFzgwkQxpynVKfntgTZpRERCieHn2MjRw6gwz7EN'"
+        :farm="'CtWTXdRsy3pQjNB4MksEt5G88FBBW8whZY6MhS58Wb8Z'"
         :farmAcc="farmAcc"
         :farmer="farmer"
         :farmerAcc="farmerAcc"
@@ -49,10 +54,12 @@
           End cooldown
         </button>
         <button class="nes-btn is-warning" @click="claim">
-          Claim {{ (availableA/1000000000).toFixed(3) }} MOSC
+          Claim {{ (availableA/1000000000).toFixed(3) }} NCLR
         </button>
       </Vault>
+      
     </div>
+    
     <div v-else>
       <div class="w-full text-center mb-5">
         Stacking account not found. Create a new one?
@@ -77,7 +84,6 @@ import FarmerDisplay from '@/components/gem-farm/FarmerDisplay.vue';
 import Vault from '@/components/gem-bank/Vault.vue';
 import { INFT } from '@/common/web3/NFTget';
 import { stringifyPKsAndBNs } from '../../tests/gem-common/types';
-import Route from 'vue-router'
 
 export default defineComponent({
   components: { Vault, FarmerDisplay, ConfigPane },
@@ -125,8 +131,9 @@ export default defineComponent({
     const fetchFarn = async () => {
       // 1.
       //farmAcc.value = await gf.fetchFarmAcc(new PublicKey(farm.value!));
-        farm1 = "EStSdFzgwkQxpynVKfntgTZpRERCieHn2MjRw6gwz7EN";
-  
+
+      farm1 = "CtWTXdRsy3pQjNB4MksEt5G88FBBW8whZY6MhS58Wb8Z";
+
       farmAcc.value = await gf.fetchFarmAcc(new PublicKey(farm1));
       console.log(
         `farm found at `+farm1+`:`,

@@ -1,32 +1,30 @@
 <template>
   <div class="nes-container with-title mb-10">
-    <p class="title">Welcome to Gem Farm</p>
+    <p class="title">Welcome to Metazillas Farm</p>
     <p>
-      This app is designed to illustrate the functionality of Gem Farm. It is
-      not production grade. Use at your own risk.
+      Please select the options that suits you.
     </p>
   </div>
   <div class="flex flex-row">
-    <div class="nes-container with-title flex-1 mr-5">
-      <p class="title">Start/manage a farm</p>
+  <div class="nes-container with-title flex-1 mr-5">
+      <p class="title">New MOSC Farm</p>
       <p class="mb-5">
-        Choose this if you have your own NFT collection you'd like to offer
-        staking for.
+        Choose this if you'd like to start staking your Zillas and win $MOSC!
       </p>
-      <router-link to="manager">
-        <button class="nes-btn is-primary">Start a farm</button>
+      <router-link to="farmer">
+        <button class="nes-btn is-primary">$MOSC Farm</button>
       </router-link>
     </div>
     <div class="nes-container with-title flex-1 ml-5">
-      <p class="title">Stake your NFTs</p>
+      <p class="title">Old NCLR Farm</p>
       <p class="mb-5">
-        Choose this if you'd like to stake your NFTs at one of the existing
-        farms.
+        Choose this if you have zillas staked or tokens to claim in the old NCLR farm.
       </p>
-      <router-link to="farmer">
-        <button class="nes-btn is-primary">Stake NFTs</button>
+      <router-link to="old-farmer">
+        <button class="nes-btn is-primary">$NCLR Farm</button>
       </router-link>
     </div>
+    
   </div>
 </template>
 

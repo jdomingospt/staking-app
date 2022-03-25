@@ -11,7 +11,8 @@
       </div>
       <div class="mb-2">Wallet: {{ farmerAcc.identity.toBase58() }}</div>
       <div class="mb-2">Vault Address: {{ farmerAcc.vault.toBase58() }}</div>
-      <div class="mb-2">Zillas staked: {{ farmerAcc.gemsStaked }}</div>
+      <div class="mb-2">My staked Zillas: {{ farmerAcc.gemsStaked }}</div>
+      <div class="mb-2">Total staked Zillas: {{ farmAcc.gemsStaked + " (" + (farmAcc.gemsStaked / 1555 * 100).toFixed(0) + "%)" }}</div>
       <div class="mb-2">
         Min staking ends: {{ parseDate(farmerAcc.minStakingEndsTs) }}
       </div>
@@ -25,7 +26,7 @@
             :key="farmerAcc.rewardA"
             :farmReward="farmAcc.rewardA"
             :reward="farmerAcc.rewardA"
-            title="NCLR Rewards"
+            title="MOSC Rewards"
           />
         </div>
         
